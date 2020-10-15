@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	
+	<select id="selection-box" style="width: 100px;">
+		
+	</select>
+	
+	<img src="" alt="" id="image-show">
+	
+
+	<script>
+		
+		// create selection-box
+
+		var person  = ['Mina','Raju','TukTuki','Halum','Mithu'];
+		var value = ['images/mina.jpg','images/raju.jpg','images/tuktuki.jpg','images/halum.jpg','images/mithu.jpg'];
+	
+		var selection_box = document.getElementById("selection-box");
+
+		for(var i=0;i<5;i++){
+
+			var option = document.createElement("option");
+			option.setAttribute("value", value[i]);
+			var text = document.createTextNode(person[i]);
+			option.appendChild(text);
+			selection_box.appendChild(option);
+
+		}
+
+		// show image when change
+		selection_box.onchange = function(){
+			document.getElementById("image-show").src=this.value;
+		};
+	</script>
+</body>
+</html>
